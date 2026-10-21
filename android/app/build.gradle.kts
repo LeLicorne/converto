@@ -58,3 +58,12 @@ kotlin {
 flutter {
     source = "../.."
 }
+
+gradle.taskGraph.whenReady {
+    if (hasTask(":app:bundleRelease") && !keystoreProperties.containsKey("storeFile")) {
+        throw GradleException(
+            "Clé de signature absente : créez android/key.properties (voir RELEASE_CHECKLIST.md, section 2) " +
+                "avant de produire le bundle de publication.",
+        )
+    }
+}

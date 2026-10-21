@@ -1,7 +1,7 @@
 # Réponses aux questionnaires de confidentialité
 
 Ces réponses décrivent le comportement réel de l'application (aucune donnée collectée, aucun SDK tiers).
-Vérifiez-les de nouveau si une dépendance est ajoutée.
+Vérifiez-les de nouveau si une dépendance est ajoutée ou si une permission change (commandes de contrôle dans `RELEASE_CHECKLIST.md`, section 5).
 
 ## Apple — App Store Connect › App Privacy
 
@@ -19,9 +19,10 @@ Vérifiez-les de nouveau si une dépendance est ajoutée.
 - **Collecte ou partage de données :** Non.
 - **Données chiffrées en transit :** sans objet (aucune transmission).
 - **Possibilité de demander la suppression des données :** sans objet (aucune donnée conservée côté éditeur).
-- **Permissions Android :** aucune permission réseau (`INTERNET` et `ACCESS_NETWORK_STATE` sont retirées du manifeste fusionné). Accès aux fichiers via le sélecteur système (Storage Access Framework / Photo Picker), sans `READ_EXTERNAL_STORAGE`.
+- **Permissions Android :** aucune permission réseau (`INTERNET` et `ACCESS_NETWORK_STATE` sont retirées du manifeste fusionné), aucun accès aux médias (`READ_EXTERNAL_STORAGE` et `READ_MEDIA_*` retirées). Seule `WRITE_EXTERNAL_STORAGE`, limitée à Android 9 et moins, permet « Enregistrer dans Photos » sur ces anciennes versions. Accès aux fichiers via le sélecteur système (Storage Access Framework / Photo Picker).
 - **Public cible :** tout public, non destinée aux enfants (pas d'inscription au programme « Familles »).
 - **Annonces :** « Cette application ne contient pas de publicités ».
 - **Achats intégrés :** aucun.
 - **Accessibilité :** déclaration disponible dans l'app (À propos) et en ligne (`https://<DOMAIN>/accessibilite.html`).
-- **Niveau d'API cible :** conserver `targetSdk` à jour (exigence annuelle de Google Play).
+- **Niveau d'API cible :** `targetSdk` suit celui de Flutter ; le mettre à jour en mettant à jour Flutter (exigence annuelle de Google Play).
+- **Statut professionnel (« trader ») :** à déclarer dans la Console ; si « professionnel », l'adresse et le téléphone sont affichés publiquement sur la fiche.
