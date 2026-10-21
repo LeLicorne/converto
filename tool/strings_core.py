@@ -1,0 +1,125 @@
+LANGS = ["en", "fr", "es", "de", "it", "pt", "nl"]
+
+S = {}
+
+def add(key, en, fr, es, de, it, pt, nl, meta=None):
+    S[key] = {"en": en, "fr": fr, "es": es, "de": de, "it": it, "pt": pt, "nl": nl, "_meta": meta}
+
+# ---- App / home
+add("appName", "Converto", "Converto", "Converto", "Converto", "Converto", "Converto", "Converto")
+add("pickTitle", "Choose a file", "Choisir un fichier", "Elegir un archivo", "Datei auswählen", "Scegli un file", "Escolher um arquivo", "Kies een bestand")
+add("pickSubtitle", "Image, PDF, document, audio or video. Everything stays on your device.",
+    "Image, PDF, document, audio ou vidéo. Tout reste sur votre appareil.",
+    "Imagen, PDF, documento, audio o vídeo. Todo se queda en tu dispositivo.",
+    "Bild, PDF, Dokument, Audio oder Video. Alles bleibt auf deinem Gerät.",
+    "Immagine, PDF, documento, audio o video. Tutto resta sul tuo dispositivo.",
+    "Imagem, PDF, documento, áudio ou vídeo. Tudo fica no seu dispositivo.",
+    "Afbeelding, pdf, document, audio of video. Alles blijft op je apparaat.")
+add("pickMedia", "Photos and videos", "Photos et vidéos", "Fotos y vídeos", "Fotos und Videos", "Foto e video", "Fotos e vídeos", "Foto's en video's")
+add("pickMultipleHint", "You can select several files to merge them.", "Vous pouvez sélectionner plusieurs fichiers pour les fusionner.", "Puedes seleccionar varios archivos para combinarlos.", "Du kannst mehrere Dateien auswählen, um sie zusammenzuführen.", "Puoi selezionare più file per unirli.", "Você pode selecionar vários arquivos para combiná-los.", "Je kunt meerdere bestanden kiezen om ze samen te voegen.")
+add("loading", "Reading file…", "Lecture du fichier…", "Leyendo el archivo…", "Datei wird gelesen …", "Lettura del file…", "Lendo o arquivo…", "Bestand lezen…")
+add("changeFile", "Change", "Changer", "Cambiar", "Ändern", "Cambia", "Alterar", "Wijzigen")
+add("changeFileSemantics", "Choose another file", "Choisir un autre fichier", "Elegir otro archivo", "Andere Datei auswählen", "Scegli un altro file", "Escolher outro arquivo", "Kies een ander bestand")
+add("filesSelected", "{count, plural, =1{1 file} other{{count} files}}", "{count, plural, =1{1 fichier} other{{count} fichiers}}", "{count, plural, =1{1 archivo} other{{count} archivos}}", "{count, plural, =1{1 Datei} other{{count} Dateien}}", "{count, plural, =1{1 file} other{{count} file}}", "{count, plural, =1{1 arquivo} other{{count} arquivos}}", "{count, plural, =1{1 bestand} other{{count} bestanden}}", {"placeholders": {"count": {"type": "int"}}})
+add("detectedFormat", "Detected: {format}", "Détecté : {format}", "Detectado: {format}", "Erkannt: {format}", "Rilevato: {format}", "Detectado: {format}", "Herkend: {format}", {"placeholders": {"format": {"type": "String"}}})
+add("unknownFormat", "Unrecognised format", "Format non reconnu", "Formato no reconocido", "Unbekanntes Format", "Formato non riconosciuto", "Formato não reconhecido", "Onbekend formaat")
+add("convertTo", "Convert to", "Convertir en", "Convertir a", "Konvertieren in", "Converti in", "Converter para", "Converteren naar")
+add("noTargets", "No conversion is available for this file.", "Aucune conversion n'est disponible pour ce fichier.", "No hay conversiones disponibles para este archivo.", "Für diese Datei ist keine Konvertierung verfügbar.", "Nessuna conversione disponibile per questo file.", "Nenhuma conversão disponível para este arquivo.", "Er is geen conversie beschikbaar voor dit bestand.")
+add("mixedFiles", "These files have different types and can't be converted together.", "Ces fichiers sont de types différents et ne peuvent pas être convertis ensemble.", "Estos archivos son de tipos distintos y no se pueden convertir juntos.", "Diese Dateien haben unterschiedliche Typen und können nicht zusammen konvertiert werden.", "Questi file sono di tipi diversi e non possono essere convertiti insieme.", "Esses arquivos são de tipos diferentes e não podem ser convertidos juntos.", "Deze bestanden zijn van verschillende typen en kunnen niet samen worden geconverteerd.")
+add("pagesCount", "{count, plural, =1{1 page} other{{count} pages}}", "{count, plural, =1{1 page} other{{count} pages}}", "{count, plural, =1{1 página} other{{count} páginas}}", "{count, plural, =1{1 Seite} other{{count} Seiten}}", "{count, plural, =1{1 pagina} other{{count} pagine}}", "{count, plural, =1{1 página} other{{count} páginas}}", "{count, plural, =1{1 pagina} other{{count} pagina's}}", {"placeholders": {"count": {"type": "int"}}})
+
+# ---- Categories
+add("categoryImage", "Images", "Images", "Imágenes", "Bilder", "Immagini", "Imagens", "Afbeeldingen")
+add("categoryDocument", "Documents", "Documents", "Documentos", "Dokumente", "Documenti", "Documentos", "Documenten")
+add("categoryData", "Data", "Données", "Datos", "Daten", "Dati", "Dados", "Gegevens")
+add("categoryArchive", "Archives", "Archives", "Archivos comprimidos", "Archive", "Archivi", "Arquivos compactados", "Archieven")
+add("categoryAudio", "Audio", "Audio", "Audio", "Audio", "Audio", "Áudio", "Audio")
+add("categoryVideo", "Video", "Vidéo", "Vídeo", "Video", "Video", "Vídeo", "Video")
+add("extractArchive", "Extract files", "Extraire les fichiers", "Extraer archivos", "Dateien entpacken", "Estrai i file", "Extrair arquivos", "Bestanden uitpakken")
+add("mergePdf", "Merge / edit PDF", "Fusionner / modifier le PDF", "Combinar / editar PDF", "PDF zusammenführen / bearbeiten", "Unisci / modifica PDF", "Mesclar / editar PDF", "Pdf samenvoegen / bewerken")
+add("createZip", "ZIP archive", "Archive ZIP", "Archivo ZIP", "ZIP-Archiv", "Archivio ZIP", "Arquivo ZIP", "ZIP-archief")
+
+# ---- Options sheet
+add("optionsTitle", "Options", "Options", "Opciones", "Optionen", "Opzioni", "Opções", "Opties")
+add("convertButton", "Convert to {format}", "Convertir en {format}", "Convertir a {format}", "In {format} konvertieren", "Converti in {format}", "Converter para {format}", "Converteren naar {format}", {"placeholders": {"format": {"type": "String"}}})
+add("optQuality", "Quality", "Qualité", "Calidad", "Qualität", "Qualità", "Qualidade", "Kwaliteit")
+add("optMaxSize", "Maximum size", "Taille maximale", "Tamaño máximo", "Maximale Größe", "Dimensione massima", "Tamanho máximo", "Maximale grootte")
+add("optStripMetadata", "Remove metadata (location, camera…)", "Supprimer les métadonnées (position, appareil…)", "Eliminar metadatos (ubicación, cámara…)", "Metadaten entfernen (Standort, Kamera …)", "Rimuovi i metadati (posizione, fotocamera…)", "Remover metadados (local, câmera…)", "Metagegevens verwijderen (locatie, camera…)")
+add("optPages", "Pages", "Pages", "Páginas", "Seiten", "Pagine", "Páginas", "Pagina's")
+add("optPagesHint", "All pages, or for example 1-3, 5", "Toutes les pages, ou par exemple 1-3, 5", "Todas las páginas, o por ejemplo 1-3, 5", "Alle Seiten oder zum Beispiel 1-3, 5", "Tutte le pagine, oppure ad esempio 1-3, 5", "Todas as páginas, ou por exemplo 1-3, 5", "Alle pagina's, of bijvoorbeeld 1-3, 5")
+add("optPagesInvalid", "Invalid page selection (1 to {count}).", "Sélection de pages invalide (1 à {count}).", "Selección de páginas no válida (1 a {count}).", "Ungültige Seitenauswahl (1 bis {count}).", "Selezione di pagine non valida (da 1 a {count}).", "Seleção de páginas inválida (1 a {count}).", "Ongeldige paginaselectie (1 tot {count}).", {"placeholders": {"count": {"type": "int"}}})
+add("optLayout", "Result", "Résultat", "Resultado", "Ergebnis", "Risultato", "Resultado", "Resultaat")
+add("layoutSeparate", "One image per page", "Une image par page", "Una imagen por página", "Ein Bild pro Seite", "Un'immagine per pagina", "Uma imagem por página", "Eén afbeelding per pagina")
+add("layoutSingle", "A single long image", "Une seule image continue", "Una sola imagen continua", "Ein einziges langes Bild", "Una sola immagine continua", "Uma única imagem contínua", "Eén lange afbeelding")
+add("optDpi", "Resolution (DPI)", "Résolution (DPI)", "Resolución (DPI)", "Auflösung (DPI)", "Risoluzione (DPI)", "Resolução (DPI)", "Resolutie (DPI)")
+add("optPageSize", "Page size", "Taille de page", "Tamaño de página", "Seitengröße", "Dimensione pagina", "Tamanho da página", "Paginaformaat")
+add("pageSizeFit", "Fit the image", "Ajustée à l'image", "Ajustado a la imagen", "An Bild anpassen", "Adatta all'immagine", "Ajustado à imagem", "Aangepast aan afbeelding")
+add("optGrouping", "Result", "Résultat", "Resultado", "Ergebnis", "Risultato", "Resultado", "Resultaat")
+add("groupingSingle", "One PDF with all images", "Un seul PDF avec toutes les images", "Un solo PDF con todas las imágenes", "Ein PDF mit allen Bildern", "Un solo PDF con tutte le immagini", "Um único PDF com todas as imagens", "Eén pdf met alle afbeeldingen")
+add("groupingPerImage", "One PDF per image", "Un PDF par image", "Un PDF por imagen", "Ein PDF pro Bild", "Un PDF per immagine", "Um PDF por imagem", "Eén pdf per afbeelding")
+add("optOptimize", "Optimise file size", "Optimiser la taille du fichier", "Optimizar el tamaño del archivo", "Dateigröße optimieren", "Ottimizza la dimensione del file", "Otimizar o tamanho do arquivo", "Bestandsgrootte optimaliseren")
+add("optFontSize", "Font size", "Taille du texte", "Tamaño del texto", "Schriftgröße", "Dimensione del testo", "Tamanho do texto", "Tekstgrootte")
+add("optDelimiter", "Separator", "Séparateur", "Separador", "Trennzeichen", "Separatore", "Separador", "Scheidingsteken")
+add("optOutputDelimiter", "Separator", "Séparateur", "Separador", "Trennzeichen", "Separatore", "Separador", "Scheidingsteken")
+add("optFirstRowHeader", "First row contains column names", "La première ligne contient les noms de colonnes", "La primera fila contiene los nombres de columna", "Erste Zeile enthält Spaltennamen", "La prima riga contiene i nomi delle colonne", "A primeira linha contém os nomes das colunas", "Eerste rij bevat kolomnamen")
+add("optPretty", "Readable formatting", "Mise en forme lisible", "Formato legible", "Lesbare Formatierung", "Formattazione leggibile", "Formatação legível", "Leesbare opmaak")
+add("optPageSeparators", "Add page separators", "Ajouter des séparateurs de page", "Añadir separadores de página", "Seitentrenner einfügen", "Aggiungi separatori di pagina", "Adicionar separadores de página", "Paginascheidingen toevoegen")
+add("optRotation", "Rotation", "Rotation", "Rotación", "Drehung", "Rotazione", "Rotação", "Rotatie")
+add("optBitrate", "Bitrate", "Débit", "Tasa de bits", "Bitrate", "Bitrate", "Taxa de bits", "Bitrate")
+add("optSampleRate", "Sample rate", "Fréquence d'échantillonnage", "Frecuencia de muestreo", "Abtastrate", "Frequenza di campionamento", "Taxa de amostragem", "Samplefrequentie")
+add("optChannels", "Channels", "Canaux", "Canales", "Kanäle", "Canali", "Canais", "Kanalen")
+add("optKeepMetadata", "Keep tags and cover art", "Conserver les tags et la pochette", "Conservar etiquetas y carátula", "Tags und Cover behalten", "Mantieni tag e copertina", "Manter tags e capa", "Tags en albumhoes behouden")
+add("optResolution", "Resolution", "Résolution", "Resolución", "Auflösung", "Risoluzione", "Resolução", "Resolutie")
+add("optFps", "Frame rate", "Images par seconde", "Fotogramas por segundo", "Bildrate", "Fotogrammi al secondo", "Quadros por segundo", "Beeldsnelheid")
+add("optCodec", "Codec", "Codec", "Códec", "Codec", "Codec", "Codec", "Codec")
+add("optKeepAudio", "Keep audio track", "Conserver la piste audio", "Conservar la pista de audio", "Tonspur behalten", "Mantieni la traccia audio", "Manter a faixa de áudio", "Audiospoor behouden")
+add("optGifWidth", "Width", "Largeur", "Ancho", "Breite", "Larghezza", "Largura", "Breedte")
+add("optGifFps", "Frames per second", "Images par seconde", "Fotogramas por segundo", "Bilder pro Sekunde", "Fotogrammi al secondo", "Quadros por segundo", "Beelden per seconde")
+add("optGifDuration", "Maximum duration", "Durée maximale", "Duración máxima", "Maximale Dauer", "Durata massima", "Duração máxima", "Maximale duur")
+add("choiceOriginal", "Original", "Original", "Original", "Original", "Originale", "Original", "Origineel")
+add("choiceFull", "Whole video", "Toute la vidéo", "Todo el vídeo", "Ganzes Video", "Intero video", "Vídeo inteiro", "Hele video")
+add("choiceMono", "Mono", "Mono", "Mono", "Mono", "Mono", "Mono", "Mono")
+add("choiceStereo", "Stereo", "Stéréo", "Estéreo", "Stereo", "Stereo", "Estéreo", "Stereo")
+add("choiceAuto", "Automatic", "Automatique", "Automático", "Automatisch", "Automatico", "Automático", "Automatisch")
+add("choiceTab", "Tab", "Tabulation", "Tabulación", "Tabulator", "Tabulazione", "Tabulação", "Tab")
+add("choiceHigh", "High", "Élevée", "Alta", "Hoch", "Alta", "Alta", "Hoog")
+add("choiceMedium", "Balanced", "Équilibrée", "Equilibrada", "Ausgewogen", "Bilanciata", "Equilibrada", "Gebalanceerd")
+add("choiceLow", "Small file", "Fichier léger", "Archivo ligero", "Kleine Datei", "File leggero", "Arquivo leve", "Klein bestand")
+
+# ---- Progress
+add("converting", "Converting…", "Conversion en cours…", "Convirtiendo…", "Wird konvertiert …", "Conversione in corso…", "Convertendo…", "Bezig met converteren…")
+add("convertingSemantics", "Conversion in progress, {percent} percent", "Conversion en cours, {percent} pour cent", "Conversión en curso, {percent} por ciento", "Konvertierung läuft, {percent} Prozent", "Conversione in corso, {percent} per cento", "Conversão em andamento, {percent} por cento", "Conversie bezig, {percent} procent", {"placeholders": {"percent": {"type": "int"}}})
+add("keepScreenOn", "Keep the app open until the conversion ends.", "Gardez l'application ouverte jusqu'à la fin de la conversion.", "Mantén la aplicación abierta hasta que termine la conversión.", "Lass die App geöffnet, bis die Konvertierung fertig ist.", "Tieni l'app aperta fino al termine della conversione.", "Mantenha o app aberto até o fim da conversão.", "Houd de app open tot de conversie klaar is.")
+add("cancel", "Cancel", "Annuler", "Cancelar", "Abbrechen", "Annulla", "Cancelar", "Annuleren")
+add("ok", "OK", "OK", "Aceptar", "OK", "OK", "OK", "OK")
+
+# ---- Result
+add("resultTitle", "Done!", "Terminé !", "¡Listo!", "Fertig!", "Fatto!", "Pronto!", "Klaar!")
+add("resultFiles", "{count, plural, =1{1 file created} other{{count} files created}}", "{count, plural, =1{1 fichier créé} other{{count} fichiers créés}}", "{count, plural, =1{1 archivo creado} other{{count} archivos creados}}", "{count, plural, =1{1 Datei erstellt} other{{count} Dateien erstellt}}", "{count, plural, =1{1 file creato} other{{count} file creati}}", "{count, plural, =1{1 arquivo criado} other{{count} arquivos criados}}", "{count, plural, =1{1 bestand gemaakt} other{{count} bestanden gemaakt}}", {"placeholders": {"count": {"type": "int"}}})
+add("resultSize", "{before} → {after}", "{before} → {after}", "{before} → {after}", "{before} → {after}", "{before} → {after}", "{before} → {after}", "{before} → {after}", {"placeholders": {"before": {"type": "String"}, "after": {"type": "String"}}})
+add("actionSave", "Save", "Enregistrer", "Guardar", "Speichern", "Salva", "Salvar", "Opslaan")
+add("actionSaveToFiles", "Save to Files", "Enregistrer dans Fichiers", "Guardar en Archivos", "In Dateien sichern", "Salva in File", "Salvar em Arquivos", "Opslaan in Bestanden")
+add("actionSaveToPhotos", "Save to Photos", "Enregistrer dans Photos", "Guardar en Fotos", "In Fotos sichern", "Salva in Foto", "Salvar em Fotos", "Opslaan in Foto's")
+add("actionShare", "Share", "Partager", "Compartir", "Teilen", "Condividi", "Compartilhar", "Delen")
+add("actionOpen", "Open", "Ouvrir", "Abrir", "Öffnen", "Apri", "Abrir", "Openen")
+add("actionOpenWith", "Open with…", "Ouvrir avec…", "Abrir con…", "Öffnen mit …", "Apri con…", "Abrir com…", "Openen met…")
+add("shareAsZip", "Everything as one ZIP", "Tout en un seul ZIP", "Todo en un solo ZIP", "Alles als ein ZIP", "Tutto in un unico ZIP", "Tudo em um único ZIP", "Alles in één ZIP")
+add("convertAnother", "Another format", "Autre format", "Otro formato", "Anderes Format", "Altro formato", "Outro formato", "Ander formaat")
+add("newFile", "New file", "Nouveau fichier", "Nuevo archivo", "Neue Datei", "Nuovo file", "Novo arquivo", "Nieuw bestand")
+add("savedOk", "Saved.", "Enregistré.", "Guardado.", "Gespeichert.", "Salvato.", "Salvo.", "Opgeslagen.")
+add("savedPhotos", "Saved to your photos.", "Enregistré dans vos photos.", "Guardado en tus fotos.", "In deinen Fotos gesichert.", "Salvato nelle tue foto.", "Salvo nas suas fotos.", "Opgeslagen in je foto's.")
+add("saveFailed", "The file couldn't be saved.", "Le fichier n'a pas pu être enregistré.", "No se pudo guardar el archivo.", "Die Datei konnte nicht gespeichert werden.", "Impossibile salvare il file.", "Não foi possível salvar o arquivo.", "Het bestand kon niet worden opgeslagen.")
+add("openFailed", "No app can open this file.", "Aucune application ne peut ouvrir ce fichier.", "Ninguna aplicación puede abrir este archivo.", "Keine App kann diese Datei öffnen.", "Nessuna app può aprire questo file.", "Nenhum app pode abrir este arquivo.", "Geen app kan dit bestand openen.")
+
+# ---- Errors and password
+add("passwordTitle", "Password required", "Mot de passe requis", "Se requiere contraseña", "Passwort erforderlich", "Password richiesta", "Senha necessária", "Wachtwoord vereist")
+add("passwordBody", "“{name}” is protected. The password is only used on this device.", "« {name} » est protégé. Le mot de passe n'est utilisé que sur cet appareil.", "«{name}» está protegido. La contraseña solo se usa en este dispositivo.", "„{name}“ ist geschützt. Das Passwort wird nur auf diesem Gerät verwendet.", "«{name}» è protetto. La password viene usata solo su questo dispositivo.", "“{name}” está protegido. A senha é usada apenas neste dispositivo.", "‘{name}’ is beveiligd. Het wachtwoord wordt alleen op dit apparaat gebruikt.", {"placeholders": {"name": {"type": "String"}}})
+add("passwordLabel", "Password", "Mot de passe", "Contraseña", "Passwort", "Password", "Senha", "Wachtwoord")
+add("passwordWrong", "Wrong password, please try again.", "Mot de passe incorrect, réessayez.", "Contraseña incorrecta, inténtalo de nuevo.", "Falsches Passwort, bitte erneut versuchen.", "Password errata, riprova.", "Senha incorreta, tente novamente.", "Onjuist wachtwoord, probeer het opnieuw.")
+add("errCorrupt", "This file looks damaged or can't be read.", "Ce fichier semble endommagé ou illisible.", "Este archivo parece dañado o no se puede leer.", "Diese Datei scheint beschädigt oder nicht lesbar zu sein.", "Questo file sembra danneggiato o illeggibile.", "Este arquivo parece danificado ou ilegível.", "Dit bestand lijkt beschadigd of onleesbaar.")
+add("errUnsupported", "This file can't be converted with these settings.", "Ce fichier ne peut pas être converti avec ces réglages.", "Este archivo no se puede convertir con estos ajustes.", "Diese Datei kann mit diesen Einstellungen nicht konvertiert werden.", "Questo file non può essere convertito con queste impostazioni.", "Este arquivo não pode ser convertido com essas configurações.", "Dit bestand kan niet met deze instellingen worden geconverteerd.")
+add("errTooLarge", "This file is too large to be converted on this device.", "Ce fichier est trop volumineux pour être converti sur cet appareil.", "Este archivo es demasiado grande para convertirlo en este dispositivo.", "Diese Datei ist zu groß für die Konvertierung auf diesem Gerät.", "Questo file è troppo grande per essere convertito su questo dispositivo.", "Este arquivo é grande demais para ser convertido neste dispositivo.", "Dit bestand is te groot om op dit apparaat te worden geconverteerd.")
+add("errNoSpace", "Not enough free storage space.", "Espace de stockage insuffisant.", "No hay suficiente espacio de almacenamiento.", "Nicht genügend freier Speicherplatz.", "Spazio di archiviazione insufficiente.", "Espaço de armazenamento insuficiente.", "Onvoldoende opslagruimte.")
+add("errEngine", "This conversion isn't available on this device.", "Cette conversion n'est pas disponible sur cet appareil.", "Esta conversión no está disponible en este dispositivo.", "Diese Konvertierung ist auf diesem Gerät nicht verfügbar.", "Questa conversione non è disponibile su questo dispositivo.", "Esta conversão não está disponível neste dispositivo.", "Deze conversie is niet beschikbaar op dit apparaat.")
+add("errPick", "The file couldn't be opened.", "Le fichier n'a pas pu être ouvert.", "No se pudo abrir el archivo.", "Die Datei konnte nicht geöffnet werden.", "Impossibile aprire il file.", "Não foi possível abrir o arquivo.", "Het bestand kon niet worden geopend.")
+add("dismiss", "Dismiss", "Fermer", "Cerrar", "Schließen", "Chiudi", "Fechar", "Sluiten")

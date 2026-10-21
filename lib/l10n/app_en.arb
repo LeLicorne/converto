@@ -1,0 +1,207 @@
+{
+  "@@locale": "en",
+  "appName": "Converto",
+  "pickTitle": "Choose a file",
+  "pickSubtitle": "Image, PDF, document, audio or video. Everything stays on your device.",
+  "pickMedia": "Photos and videos",
+  "pickMultipleHint": "You can select several files to merge them.",
+  "loading": "Reading file…",
+  "changeFile": "Change",
+  "changeFileSemantics": "Choose another file",
+  "filesSelected": "{count, plural, =1{1 file} other{{count} files}}",
+  "@filesSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "detectedFormat": "Detected: {format}",
+  "@detectedFormat": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "unknownFormat": "Unrecognised format",
+  "convertTo": "Convert to",
+  "noTargets": "No conversion is available for this file.",
+  "mixedFiles": "These files have different types and can't be converted together.",
+  "pagesCount": "{count, plural, =1{1 page} other{{count} pages}}",
+  "@pagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryImage": "Images",
+  "categoryDocument": "Documents",
+  "categoryData": "Data",
+  "categoryArchive": "Archives",
+  "categoryAudio": "Audio",
+  "categoryVideo": "Video",
+  "extractArchive": "Extract files",
+  "mergePdf": "Merge / edit PDF",
+  "createZip": "ZIP archive",
+  "optionsTitle": "Options",
+  "convertButton": "Convert to {format}",
+  "@convertButton": {
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    }
+  },
+  "optQuality": "Quality",
+  "optMaxSize": "Maximum size",
+  "optStripMetadata": "Remove metadata (location, camera…)",
+  "optPages": "Pages",
+  "optPagesHint": "All pages, or for example 1-3, 5",
+  "optPagesInvalid": "Invalid page selection (1 to {count}).",
+  "@optPagesInvalid": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "optLayout": "Result",
+  "layoutSeparate": "One image per page",
+  "layoutSingle": "A single long image",
+  "optDpi": "Resolution (DPI)",
+  "optPageSize": "Page size",
+  "pageSizeFit": "Fit the image",
+  "optGrouping": "Result",
+  "groupingSingle": "One PDF with all images",
+  "groupingPerImage": "One PDF per image",
+  "optOptimize": "Optimise file size",
+  "optFontSize": "Font size",
+  "optDelimiter": "Separator",
+  "optOutputDelimiter": "Separator",
+  "optFirstRowHeader": "First row contains column names",
+  "optPretty": "Readable formatting",
+  "optPageSeparators": "Add page separators",
+  "optRotation": "Rotation",
+  "optBitrate": "Bitrate",
+  "optSampleRate": "Sample rate",
+  "optChannels": "Channels",
+  "optKeepMetadata": "Keep tags and cover art",
+  "optResolution": "Resolution",
+  "optFps": "Frame rate",
+  "optCodec": "Codec",
+  "optKeepAudio": "Keep audio track",
+  "optGifWidth": "Width",
+  "optGifFps": "Frames per second",
+  "optGifDuration": "Maximum duration",
+  "choiceOriginal": "Original",
+  "choiceFull": "Whole video",
+  "choiceMono": "Mono",
+  "choiceStereo": "Stereo",
+  "choiceAuto": "Automatic",
+  "choiceTab": "Tab",
+  "choiceHigh": "High",
+  "choiceMedium": "Balanced",
+  "choiceLow": "Small file",
+  "converting": "Converting…",
+  "convertingSemantics": "Conversion in progress, {percent} percent",
+  "@convertingSemantics": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "keepScreenOn": "Keep the app open until the conversion ends.",
+  "cancel": "Cancel",
+  "ok": "OK",
+  "resultTitle": "Done!",
+  "resultFiles": "{count, plural, =1{1 file created} other{{count} files created}}",
+  "@resultFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resultSize": "{before} → {after}",
+  "@resultSize": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "actionSave": "Save",
+  "actionSaveToFiles": "Save to Files",
+  "actionSaveToPhotos": "Save to Photos",
+  "actionShare": "Share",
+  "actionOpen": "Open",
+  "actionOpenWith": "Open with…",
+  "shareAsZip": "Everything as one ZIP",
+  "convertAnother": "Another format",
+  "newFile": "New file",
+  "savedOk": "Saved.",
+  "savedPhotos": "Saved to your photos.",
+  "saveFailed": "The file couldn't be saved.",
+  "openFailed": "No app can open this file.",
+  "passwordTitle": "Password required",
+  "passwordBody": "“{name}” is protected. The password is only used on this device.",
+  "@passwordBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "passwordLabel": "Password",
+  "passwordWrong": "Wrong password, please try again.",
+  "errCorrupt": "This file looks damaged or can't be read.",
+  "errUnsupported": "This file can't be converted with these settings.",
+  "errTooLarge": "This file is too large to be converted on this device.",
+  "errNoSpace": "Not enough free storage space.",
+  "errEngine": "This conversion isn't available on this device.",
+  "errPick": "The file couldn't be opened.",
+  "dismiss": "Dismiss",
+  "settingsTooltip": "About and legal",
+  "aboutTitle": "About",
+  "aboutTagline": "Free. No ads, no account, no tracking. Your files never leave your device.",
+  "aboutVersion": "Version {version}",
+  "@aboutVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutPrivacy": "Privacy",
+  "aboutPrivacyBody": "This app does not collect, store or transmit any personal data. Your files are converted entirely on your device and removed from temporary storage when you finish or pick another file.\n\nThe app has no account, no advertising, no analytics, no cookies and no tracking, and it does not need an internet connection. Files are only read from the locations you choose, and results are saved or shared only when you ask.\n\nBecause no data is processed by the publisher, no consent banner is needed.",
+  "aboutAccessibility": "Accessibility",
+  "aboutAccessibilityBody": "The app is designed to be usable by everyone: screen reader support (VoiceOver and TalkBack), text that follows your system text size, light and dark themes with sufficient contrast, large touch targets and no time limits.\n\nThe target is level AA of WCAG 2.1, the basis of the French RGAA. A formal third-party audit has not been carried out yet, so compliance is not yet certified; this statement will be updated after the audit.\n\nIf you meet an accessibility problem, please write to {contact}. We will reply within a reasonable time and look for an alternative way to give you access to the feature.",
+  "@aboutAccessibilityBody": {
+    "placeholders": {
+      "contact": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutLegal": "Legal notice and terms",
+  "aboutLegalBody": "Publisher: {publisher}, private individual acting in a non-professional capacity.\nContact: {contact}.\nWebsite host: OVH SAS, 2 rue Kellermann, 59100 Roubaix, France. As permitted by Article 6, III-2 of the French LCEN, the publisher has given the host their full contact details.\n\nThe app is provided free of charge and “as is”, without any purchase, subscription or advertising. Conversion results depend on the source file and may differ from the original (layout, quality, metadata); keep a copy of your originals.\n\nYou are responsible for holding the rights to the files you convert and for using the results lawfully. The app does not remove copy protection: an encrypted PDF can only be opened with the password you provide.",
+  "@aboutLegalBody": {
+    "placeholders": {
+      "publisher": {
+        "type": "String"
+      },
+      "contact": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutLicenses": "Open-source licences",
+  "aboutContact": "Contact the publisher",
+  "aboutFfmpeg": "Audio and video conversion uses FFmpeg (LGPL 3.0)."
+}

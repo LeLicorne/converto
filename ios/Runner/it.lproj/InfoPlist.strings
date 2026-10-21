@@ -1,0 +1,4 @@
+"CFBundleDisplayName" = "Converto";
+"CFBundleName" = "Converto";
+"NSPhotoLibraryUsageDescription" = "Converto legge le foto e i video che scegli per convertirli sul tuo dispositivo.";
+"NSPhotoLibraryAddUsageDescription" = "Converto salva i file convertiti nella tua libreria foto solo quando lo richiedi.";
