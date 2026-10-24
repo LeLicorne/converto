@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rejoindre le test — Converto</title>
+<meta name="description" content="Page privée d'inscription au test de Converto.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Aller au contenu</a>
+<main id="content" class="doc">
+  <header class="brand"><img src="assets/favicon.svg" alt="" width="40" height="40"><span>Converto</span></header>
+
+  <h1 id="title" tabindex="-1">Rejoindre le test</h1>
+  <p class="lead">Converto convertit tes images, PDF, documents, audio et vidéos directement sur ton téléphone. Gratuit, sans pub, sans compte, hors ligne : tes fichiers ne quittent jamais ton appareil.</p>
+
+  <noscript><p class="notice">Cette page a besoin de JavaScript pour fonctionner.</p></noscript>
+
+  <section id="step-code" aria-labelledby="step-code-title">
+    <h2 id="step-code-title">Entre ton code</h2>
+    <form id="code-form" novalidate>
+      <div class="field">
+        <label for="code">Code d'accès</label>
+        <input id="code" name="code" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" required aria-describedby="code-help code-error">
+        <p id="code-help" class="help">Tu l'as vu dans ma story.</p>
+        <p id="code-error" class="error" role="alert" hidden></p>
+      </div>
+      <button class="button" type="submit" id="code-submit">Continuer</button>
+    </form>
+  </section>
+
+  <section id="step-form" aria-labelledby="step-form-title" hidden>
+    <h2 id="step-form-title" tabindex="-1">Quelques questions (1 minute)</h2>
+    <form id="signup-form" novalidate>
+      <fieldset class="field" aria-describedby="platform-error">
+        <legend>Tu es sur quel téléphone ?</legend>
+        <label class="choice"><input type="radio" name="platform" value="android"> Android</label>
+        <label class="choice"><input type="radio" name="platform" value="ios"> iPhone (iOS)</label>
+        <p id="platform-error" class="error" role="alert" hidden></p>
+      </fieldset>
+
+      <fieldset class="field" aria-describedby="uses-error">
+        <legend>À quoi te servirait Converto ? <span class="optional">(plusieurs choix possibles)</span></legend>
+        <label class="choice"><input type="checkbox" name="uses" value="photos"> Convertir des photos (HEIC, JPG, PNG, WebP)</label>
+        <label class="choice"><input type="checkbox" name="uses" value="pdf"> Passer des PDF en images ou en texte, fusionner des PDF</label>
+        <label class="choice"><input type="checkbox" name="uses" value="media"> Convertir de l'audio ou de la vidéo</label>
+        <label class="choice"><input type="checkbox" name="uses" value="docs"> Documents et tableurs (CSV, Excel, Word)</label>
+        <p id="uses-error" class="error" role="alert" hidden></p>
+      </fieldset>
+
+      <div class="field">
+        <label for="why">Pourquoi tu voudrais cette appli ?</label>
+        <p id="why-help" class="help">Un exemple concret nous aide beaucoup : quel fichier, dans quelle situation ?</p>
+        <textarea id="why" name="why" rows="4" maxlength="1500" required aria-describedby="why-help why-error"></textarea>
+        <p id="why-error" class="error" role="alert" hidden></p>
+      </div>
+
+      <fieldset class="field" aria-describedby="wouldDownload-error">
+        <legend id="download-legend">Si Converto est disponible sur le store, tu la télécharges ?</legend>
+        <label class="choice"><input type="radio" name="wouldDownload" value="yes"> Oui, sûrement</label>
+        <label class="choice"><input type="radio" name="wouldDownload" value="maybe"> Peut-être</label>
+        <label class="choice"><input type="radio" name="wouldDownload" value="no"> Non</label>
+        <p id="wouldDownload-error" class="error" role="alert" hidden></p>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Rester en contact <span class="optional">(facultatif)</span></legend>
+        <p class="help">Laisse ton prénom et ton e-mail seulement si tu veux être prévenu(e) du test et de la sortie de l'appli. Sinon, laisse vide : tu peux participer sans.</p>
+        <label for="firstName">Prénom</label>
+        <input id="firstName" name="firstName" type="text" autocomplete="given-name" maxlength="80" aria-describedby="firstName-error">
+        <p id="firstName-error" class="error" role="alert" hidden></p>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" maxlength="200" aria-describedby="email-error">
+        <p id="email-error" class="error" role="alert" hidden></p>
+        <label class="choice"><input type="checkbox" id="consent" name="consent" aria-describedby="consent-error"> J'accepte que mon prénom et mon e-mail soient utilisés pour me contacter à propos du test et de la sortie de Converto. Je peux retirer mon accord à tout moment (voir la <a href="confidentialite.html">politique de confidentialité</a>).</label>
+        <p id="consent-error" class="error" role="alert" hidden></p>
+      </fieldset>
+
+      <div class="trap" aria-hidden="true">
+        <label for="website">Ne pas remplir ce champ</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <p id="form-error" class="error" role="alert" hidden></p>
+      <button class="button" type="submit" id="form-submit">Envoyer</button>
+    </form>
+  </section>
+
+  <section id="step-done" aria-labelledby="step-done-title" hidden>
+    <h2 id="step-done-title" tabindex="-1">Merci !</h2>
+    <div id="done-android" hidden>
+      <p>Pour essayer Converto tout de suite :</p>
+      <ol class="steps">
+        <li>Rejoins le groupe des testeurs. <a class="button" id="group-link" href="#" rel="noopener" hidden>Rejoindre le groupe</a></li>
+        <li>Attends quelques minutes que ton accès soit pris en compte.</li>
+        <li>Ouvre ce lien avec le <strong>même compte Google</strong>, clique sur « Devenir testeur », puis installe l'appli. <a class="button" id="test-link" href="#" rel="noopener" hidden>Ouvrir le test</a></li>
+      </ol>
+      <p id="links-missing" class="notice" hidden>Les liens du test arrivent très bientôt : reviens sur cette page un peu plus tard.</p>
+    </div>
+    <div id="done-ios" hidden>
+      <p>Converto n'est pas encore disponible sur l'App Store. Ta réponse nous aide à décider de sa sortie.</p>
+      <p id="ios-contact" hidden>On te prévient par e-mail quand ce sera le cas.</p>
+    </div>
+  </section>
+
+  <footer class="page-footer"><a href="confidentialite.html">Politique de confidentialité</a></footer>
+</main>
+<script src="config.js"></script>
+<script type="module" src="test.js"></script>
+</body>
+</html>

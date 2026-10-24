@@ -1,0 +1,35 @@
+rules_version = '2';
+
+// Règles de la base du formulaire de test de Converto.
+//  - access/{CODE}  : un document par code d'accès (ex. access/CONVERTO-26). Lisible seulement par son identifiant exact,
+//                     jamais listable. Contient les champs groupUrl et testUrl. Créé à la main dans la console.
+//  - responses/{id} : réponses des testeurs. Création seule, avec un code d'accès existant et des champs contrôlés ;
+//                     aucune lecture, modification ni suppression depuis le navigateur (lecture dans la console Firebase).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /access/{code} {
+      allow get: if true;
+      allow list, create, update, delete: if false;
+    }
+
+    match /responses/{responseId} {
+      allow create: if isValidResponse(request.resource.data);
+      allow read, update, delete: if false;
+    }
+
+    function isValidResponse(d) {
+      return d.keys().hasOnly(['code', 'platform', 'uses', 'why', 'wouldDownload', 'consent', 'firstName', 'email'])
+        && d.keys().hasAll(['code', 'platform', 'uses', 'why', 'wouldDownload', 'consent'])
+        && d.code is string && d.code.size() >= 4 && d.code.size() <= 32
+        && exists(/databases/$(database)/documents/access/$(d.code))
+        && d.platform in ['android', 'ios']
+        && d.uses is list && d.uses.size() <= 4 && d.uses.hasOnly(['photos', 'pdf', 'media', 'docs'])
+        && d.why is string && d.why.size() >= 3 && d.why.size() <= 1500
+        && d.wouldDownload in ['yes', 'maybe', 'no']
+        && d.consent is bool
+        && (!('firstName' in d) || (d.firstName is string && d.firstName.size() >= 1 && d.firstName.size() <= 80 && d.consent == true))
+        && (!('email' in d) || (d.email is string && d.email.size() >= 5 && d.email.size() <= 200 && d.consent == true));
+    }
+  }
+}
