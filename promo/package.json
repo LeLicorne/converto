@@ -1,0 +1,25 @@
+{
+  "name": "converto-promo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Publicité animée de Converto (Remotion)",
+  "scripts": {
+    "studio": "remotion studio",
+    "music": "node scripts/music.mjs",
+    "render:vertical": "remotion render ConvertoVertical out/converto-9x16-20s.mp4",
+    "render:wide": "remotion render ConvertoWide out/converto-16x9-30s.mp4",
+    "render": "npm run music && npm run render:vertical && npm run render:wide",
+    "srt": "node scripts/srt.mjs",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.538",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.538"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "typescript": "5.8.3"
+  }
+}

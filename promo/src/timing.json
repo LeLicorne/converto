@@ -1,0 +1,13 @@
+{
+  "fps": 30,
+  "vertical": {
+    "width": 1080,
+    "height": 1920,
+    "scenes": { "hook": 90, "pick": 120, "formats": 150, "options": 90, "privacy": 90, "cta": 60 }
+  },
+  "wide": {
+    "width": 1920,
+    "height": 1080,
+    "scenes": { "hook": 120, "pick": 150, "formats": 180, "options": 180, "privacy": 180, "cta": 90 }
+  }
+}

@@ -30,7 +30,7 @@ Limites connues : DOCX → PDF/texte récupère le texte et les titres, pas la m
 - `lib/features/convert/registry` : **source de vérité** de ce qui est proposé ; ajouter un format = ajouter un convertisseur + sa traduction.
 - `lib/features/convert/application` : machine à états Riverpod (`ConversionController`).
 - `lib/features/{home,result,settings,pick}` : écrans et sélection de fichiers. `lib/core` : thème, mise en page adaptative, constantes d'éditeur. `lib/l10n` : ARB générés.
-- `tool/` : générateurs (textes, fiches store, site web, captures, visuels). `store/` : fiches, captures, visuels. `web/` : site légal (Docker).
+- `tool/` : générateurs (textes, fiches store, site web, captures, visuels). `store/` : fiches, captures, visuels. `web/` : site légal (Docker). `promo/` : publicité animée.
 
 ## Commandes
 ```
@@ -57,6 +57,9 @@ dart run tool/flatten_screenshots.dart                 # retire le canal alpha e
 flutter test tool/graphics --update-goldens            # visuel de présentation Play
 ```
 Prérequis : simulateurs iPhone 16 Pro Max et iPad Pro 13″ (identifiants dans `tool/screenshots/ios.sh`), émulateur Android arm64 démarré avec `-partition-size 4096`. Le point d'entrée `tool/screenshots/main.dart` ne fait pas partie de l'app publiée.
+
+## Publicité animée (promo/)
+Vidéos de présentation en français (9:16 de 20 s et 16:9 de 30 s) générées avec Remotion : `cd promo && npm install && npm run render`. Détails et réglages dans `promo/README.md`.
 
 ## Site légal (web/)
 Pages de confidentialité, d'accessibilité et mentions légales en 7 langues, déployables avec `docker compose` (voir `web/README.md`).

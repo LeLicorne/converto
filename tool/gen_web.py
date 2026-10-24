@@ -1,4 +1,4 @@
-import html, os, re, shutil, sys
+import html, json, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from strings_core import S, LANGS
 import strings_about  # noqa: F401
@@ -7,7 +7,7 @@ from strings_web import W
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "web")
 DEFAULT_LANG = "fr"
-UPDATED = "2026-10-21"
+UPDATED = "2026-10-25"
 ORDER = [DEFAULT_LANG] + [l for l in LANGS if l != DEFAULT_LANG]
 
 PAGES = {
@@ -34,6 +34,25 @@ def nav(lang_active=None):
 
 def shell(title, description, canonical, body, noindex):
     robots = "noindex, follow" if noindex else "index, follow"
+    social = "" if noindex else f'''
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Converto">
+<meta property="og:title" content="{html.escape(title)}">
+<meta property="og:description" content="{html.escape(description)}">
+<meta property="og:url" content="{{{{SITE_URL}}}}/{canonical}">
+<meta property="og:image" content="{{{{SITE_URL}}}}/assets/apple-touch-icon.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{html.escape(title)}">
+<meta name="twitter:description" content="{html.escape(description)}">
+<script type="application/ld+json">{json.dumps(
+        {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Converto",
+         "description": description, "applicationCategory": "UtilitiesApplication",
+         "operatingSystem": "Android, iOS", "inLanguage": ORDER,
+         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+         "author": {"@type": "Person", "name": "{{AUTHOR}}"},
+         "image": "{{SITE_URL}}/assets/apple-touch-icon.png", "url": "{{SITE_URL}}/"},
+        ensure_ascii=False).replace("<", "\\u003c")}</script>'''
     return f'''<!doctype html>
 <html lang="{DEFAULT_LANG}">
 <head>
@@ -43,7 +62,7 @@ def shell(title, description, canonical, body, noindex):
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(description)}">
 <meta name="robots" content="{robots}">
-<link rel="canonical" href="{{{{SITE_URL}}}}/{canonical}">
+<link rel="canonical" href="{{{{SITE_URL}}}}/{canonical}">{social}
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#4f46e5">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -76,6 +95,7 @@ def build_doc(slug, title_key, body_key, with_site_note):
         inner += para(S[body_key][l])
         if with_site_note:
             inner += f'<h2>{html.escape(W["siteHeading"][l])}</h2>' + para(W["siteNote"][l])
+            inner += f'<h2>{html.escape(W["formHeading"][l])}</h2>' + para(W["formNote"][l])
         secs += section(l, inner)
     title = f'{S[title_key][DEFAULT_LANG]} — Converto'
     return shell(title, S[title_key][DEFAULT_LANG] + " — Converto", f"{slug}.html", secs, True)
@@ -89,7 +109,7 @@ def build_index():
         )
         inner = f'<h1>Converto</h1><p>{html.escape(W["intro"][l])}</p><ul class="docs">{links}</ul>'
         secs += section(l, inner)
-    return shell("Converto", W["intro"][DEFAULT_LANG], "", secs, False)
+    return shell("Converto — convertisseur de fichiers gratuit et 100 % local", W["intro"][DEFAULT_LANG], "", secs, False)
 
 os.makedirs(ROOT, exist_ok=True)
 for slug, (tk, bk, note) in PAGES.items():

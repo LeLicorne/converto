@@ -20,7 +20,7 @@ Vérifiez-les de nouveau si une dépendance est ajoutée ou si une permission ch
 - **Données chiffrées en transit :** sans objet (aucune transmission).
 - **Possibilité de demander la suppression des données :** sans objet (aucune donnée conservée côté éditeur).
 - **Permissions Android :** aucune permission réseau (`INTERNET` et `ACCESS_NETWORK_STATE` sont retirées du manifeste fusionné), aucun accès aux médias (`READ_EXTERNAL_STORAGE` et `READ_MEDIA_*` retirées). Seule `WRITE_EXTERNAL_STORAGE`, limitée à Android 9 et moins, permet « Enregistrer dans Photos » sur ces anciennes versions. Accès aux fichiers via le sélecteur système (Storage Access Framework / Photo Picker).
-- **Public cible :** tout public, non destinée aux enfants (pas d'inscription au programme « Familles »).
+- **Public cible :** « 18 ans et plus » uniquement (éventuellement « 16-17 »), jamais les tranches d'enfants, sinon les règles « Contenus familiaux » s'appliquent. Question « l'app peut-elle attirer involontairement les enfants ? » : Non. Pas d'inscription au programme « Familles ».
 - **Annonces :** « Cette application ne contient pas de publicités ».
 - **Achats intégrés :** aucun.
 - **Accessibilité :** déclaration disponible dans l'app (À propos) et en ligne (`https://<DOMAIN>/accessibilite.html`).

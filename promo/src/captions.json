@@ -1,0 +1,24 @@
+{
+  "hook": [
+    "Un fichier qui ne s'ouvre pas ?"
+  ],
+  "pick": [
+    "Choisissez un fichier.",
+    "Converto reconnaît son format."
+  ],
+  "formats": [
+    "Seules les conversions",
+    "possibles sont proposées."
+  ],
+  "options": [
+    "Une image par page, ou une seule.",
+    "À vous de choisir."
+  ],
+  "privacy": [
+    "Tout reste sur votre téléphone."
+  ],
+  "cta": [
+    "Converto",
+    "Convertissez vos fichiers en toute confidentialité."
+  ]
+}

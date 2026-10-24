@@ -49,6 +49,7 @@ Ce flux a été testé de bout en bout avec une clé jetable (supprimée) : le b
 ## 3. Site légal (obligatoire pour les deux stores)
 - [ ] Déployer le dossier `web/` : `cd web && cp .env.example .env`, ajuster `DOMAIN` (proposition : `converto.baptiste-lore.com`), puis `docker compose up -d --build`. Détails dans `web/README.md`.
 - [ ] Vérifier que `https://<DOMAIN>/confidentialite.html` répond, puis le coller dans la Console.
+- [ ] Page de test privée `https://<DOMAIN>/test.html` : base Firestore en Europe, règles publiées, document `access/<CODE>` créé, clé API restreinte au domaine (détails dans `web/README.md`).
 
 ## 4. iOS (plus tard)
 - [ ] Compte **Apple Developer** (99 $/an) et création de l'app dans App Store Connect avec l'identifiant `com.baptistelore.converto`.
